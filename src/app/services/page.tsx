@@ -23,12 +23,12 @@ const ServicesMP = async () => {
 
   return (
     <Box>
-      <Container maxW="7xl" h="88vh">
+      <Container maxW="7xl" mt={{base:"50px"}} minH='100vh'>
         <Flex justify="center" alignItems="center" h="full">
           <Grid
-            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
             justifyContent="center"
-            gap={3}
+            gap={6}
           >
             {servicesMainPages?.map((servicesMainPage, index) => {
               return (
