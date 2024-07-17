@@ -3,18 +3,28 @@ import Navbar from "@/components/Navbar";
 import { Providers } from "@/providers/ChakraProviders";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL (process.env.NEXT_PUBLIC_BASE_URL_FE!),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL_FE!),
   title: "Al-Birr Indonesia",
   description: "A local head company from Yogyakarta, Indonesia",
-  keywords: ["Al-Birr Indonesia", "Al-Birr Klambi","AB T-Shirt","M66 T-Shirt","Al-Birr Transportation","Transportasi Murah Jogja","City Tour Jogja","Oleh-Oleh murah jogja","Oleh-oleh khas jogja"],
-  openGraph:{
-    images:["/opengraph-image.jpg"]
-  }
+  keywords: [
+    "Al-Birr Indonesia",
+    "Al-Birr Klambi",
+    "AB T-Shirt",
+    "M66 T-Shirt",
+    "Al-Birr Transportation",
+    "Transportasi Murah Jogja",
+    "City Tour Jogja",
+    "Oleh-Oleh murah jogja",
+    "Oleh-oleh khas jogja",
+  ],
+  openGraph: {
+    images: ["/opengraph-image.jpg"],
+  },
 };
 
 export default function RootLayout({
