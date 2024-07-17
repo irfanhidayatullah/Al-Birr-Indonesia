@@ -1,27 +1,81 @@
-import { Box, Container, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { getEntriesByServices } from "@/libs/contentful";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardFooter,
+  Container,
+  Divider,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import Link from "next/link";
 
-const Services = () => {
+const ServicesMP = async () => {
+  const servicesMainPages = await getEntriesByServices();
+
   return (
     <Box>
-      <Container maxW="7xl">
-        <Grid border="1px solid black" mt="50px">
-          <Heading textAlign="center">Our Services</Heading>
-          <GridItem>
-            <Text>Al-Birr Klambi: Logo + Name + descripton, link ke rich text</Text>
-          </GridItem>
-          <GridItem>
-            <Text>AB T-Shirt: Logo + Name + descripton, link ke rich text</Text>
-          </GridItem>
-          <GridItem>
-            <Text>M66 T-Shirt: Logo + Name + descripton, link ke rich text</Text>
-          </GridItem>
-          <GridItem>
-            <Text>Al-Birr Transportation: Logo + Name + descripton, link ke rich text</Text>
-          </GridItem>
-        </Grid>
+      <Container maxW="7xl" h="88vh">
+        <Flex justify="center" alignItems="center" h="full">
+          <Grid
+            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+            justifyContent="center"
+            gap={3}
+          >
+            {servicesMainPages?.map((servicesMainPage, index) => {
+              return (
+                <GridItem key={index}>
+                  <Card>
+                    <CardBody>
+                      <Image
+                        src={servicesMainPage.logoServices.fields.file.url}
+                        borderRadius="lg"
+                      />
+                      <Stack mt="6" spacing="3">
+                        <Heading size="md">
+                          {servicesMainPage.descriptionBrand}
+                        </Heading>
+                        <Text noOfLines={3}>
+                          {servicesMainPage.abstractChildCompany}
+                        </Text>
+                      </Stack>
+                    </CardBody>
+                    <Divider />
+                    <CardFooter>
+                      <ButtonGroup spacing="2">
+                        <Link href={servicesMainPage.waLink} target="_blank">
+                          <Button
+                            variant="solid"
+                            bgColor="#4285f6"
+                            color="white"
+                          >
+                            Hubungi Kami
+                          </Button>
+                        </Link>
+                        <Link href={servicesMainPage.slug}>
+                          <Button variant="ghost" color="#4285f6">
+                            Lihat Detail
+                          </Button>
+                        </Link>
+                      </ButtonGroup>
+                    </CardFooter>
+                  </Card>
+                </GridItem>
+              );
+            })}
+          </Grid>
+        </Flex>
       </Container>
     </Box>
   );
 };
 
-export default Services;
+export default ServicesMP;

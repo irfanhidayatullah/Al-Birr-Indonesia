@@ -1,12 +1,11 @@
 import { getEntriesByServicesSlug } from "@/libs/contentful";
-import { FC } from "react";
+import { Box, Container, Image, OrderedList, Text, UnorderedList } from "@chakra-ui/react";
 import {
   documentToReactComponents,
   Options,
 } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-import { Box, Container, Image, Table, Text, UnorderedList } from "@chakra-ui/react";
-import ServicesMP from "../components/ServicesMP";
+import { FC } from "react";
 
 interface ServicesBySlug {
   params: { slug: string };
@@ -14,29 +13,38 @@ interface ServicesBySlug {
 
 const serviceDetail: FC<ServicesBySlug> = async ({ params }) => {
   const serviceDetail = await getEntriesByServicesSlug(params.slug);
+  console.log("ini adalah service", serviceDetail);
 
   const RICHTEXT_OPTIONS: Options = {
     renderNode: {
       [BLOCKS.HEADING_3]: (node, children) => {
         return (
-          <Text fontSize={"25px"} fontWeight="semibold">
+          <Text fontSize="35px" fontWeight="semibold"  mt="20px">
             {children}
           </Text>
         );
       },
       [BLOCKS.UL_LIST]: (node, children) => {
-        return <UnorderedList spacing={"8px"}>{children}</UnorderedList>;
+        return <UnorderedList spacing={"8px"} fontSize="20px">{children}</UnorderedList>;
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        return <Text mt="10px">{children}</Text>;
+        return <Text mt="10px" fontSize="20px">{children}</Text>;
+      },
+      [BLOCKS.OL_LIST]: (node, children) => {
+        return <OrderedList mt="10px" fontSize="20px">{children}</OrderedList>;
       },
     },
   };
 
   return (
     <Box>
-      <Container maxW="7xl" mt="70px" h="700px">
-        <Image src={serviceDetail?.logoServices.fields.file.url} margin='auto' h="100px" borderRadius="20px"></Image>
+      <Container maxW="7xl" mt="50px" maxH="100%">
+        <Image
+          src={serviceDetail?.logoServices.fields.file.url}
+          margin="auto"
+          h="150px"
+          borderRadius="20px"
+        ></Image>
         <Box mt="30px">
           {documentToReactComponents(
             serviceDetail?.servicesDetail,

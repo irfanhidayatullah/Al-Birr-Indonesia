@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <Box bgColor="#e2e8f0">
+    <Box bgColor="#e2e8f0" pos="fixed" w="100%" zIndex="999">
       <Container maxW="7xl">
         <Grid py="9px">
           <Flex justify="space-between" align="center">

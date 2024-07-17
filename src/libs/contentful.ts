@@ -61,10 +61,15 @@ export const getEntriesByServices = async () => {
   }
 };
 
-export const getEntriesByServicesSlug = async (slug:string) => {
-  const response = await client.getEntries({ content_type: "servicesMp", "fields.slug": slug });
-
+export const getEntriesByServicesSlug = async (slug: string) => {
   try {
+    const response = await client.getEntries({
+      content_type: "servicesMp",
+      "fields.slug": slug,
+    });
+
+    console.log(response.items);
+
     const servicescompany = response.items.map((servicesMp: any) => {
       return {
         logoServices: servicesMp.fields.logoServices,
