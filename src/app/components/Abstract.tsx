@@ -7,9 +7,13 @@ const Abstract = async () => {
   return (
     <Box>
       <Container maxW="7xl" maxH={{ md: "500px" }}>
-        <Grid justifyItems="center" h="300px" margin="auto">
-          <Text px="100px" textAlign="justify">{abstract?.[0]?.abstract}</Text>
-          <Button href="/aboutUs" mt="-30px" bgColor="#4285f6" color="white">Lihat Detail</Button>
+        <Grid justifyItems="center" margin="auto">
+          <Text px={{ md: "100px" }} textAlign="justify" noOfLines={3}>
+            {abstract?.[0]?.abstract}
+          </Text>
+          <Button href="/aboutUs" bgColor="#4285f6" color="white" mt="20px">
+            Lihat Detail
+          </Button>
         </Grid>
       </Container>
     </Box>

@@ -68,8 +68,6 @@ export const getEntriesByServicesSlug = async (slug: string) => {
       "fields.slug": slug,
     });
 
-    console.log(response.items);
-
     const servicescompany = response.items.map((servicesMp: any) => {
       return {
         logoServices: servicesMp.fields.logoServices,
@@ -81,6 +79,23 @@ export const getEntriesByServicesSlug = async (slug: string) => {
       };
     });
     return servicescompany[0];
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getEntriesByAboutUs = async (slug: string) => {
+  try {
+    const response = await client.getEntries({
+      content_type: "companyProfileAboutUs",
+    });
+
+    const aoutCompany = response.items.map((servicesMp: any) => {
+      return {
+        logoServices: servicesMp.fields.logoServices,
+      };
+    });
+    return aoutCompany;
   } catch (error) {
     console.log(error);
   }

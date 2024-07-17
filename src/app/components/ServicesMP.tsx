@@ -22,7 +22,7 @@ const ServicesMP = async () => {
 
   return (
     <Box>
-      <Container maxW="7xl" maxH={{ md: "500px" }}>
+      <Container maxW="7xl" maxH={{ md: "500px" }} mt="35px">
         <Grid
           templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
           justifyContent="center"

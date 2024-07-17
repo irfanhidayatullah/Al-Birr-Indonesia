@@ -17,7 +17,7 @@ const Testimonials = () => {
           Testimoni
         </Text>
       </Container>
-      <Grid templateColumns="repeat(3, 1fr)" gap={5} pt="30px">
+      <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(3, 1fr)"}} gap={5} pt="30px">
         <GridItem boxShadow="base" p="6" rounded="md" bg="white" mt="10">
           <Box>
             <Wrap justify="center">
