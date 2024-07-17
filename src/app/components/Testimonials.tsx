@@ -17,7 +17,11 @@ const Testimonials = () => {
           Testimoni
         </Text>
       </Container>
-      <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(3, 1fr)"}} gap={5} pt="30px">
+      <Grid
+        templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
+        gap={5}
+        pt="30px"
+      >
         <GridItem boxShadow="base" p="6" rounded="md" bg="white" mt="10">
           <Box>
             <Wrap justify="center">
@@ -84,7 +88,8 @@ const Testimonials = () => {
 
             <Flex flexDir="column" justify="space-between" h="200px" pb="4">
               <Text fontSize="17px" align="center" pt="5">
-                "Excellent Service, Excellent Driver, We are the grateful. That was amazing!"
+                "Excellent Service, Excellent Driver, We are the grateful. That
+                was amazing!"
               </Text>
 
               <Text align="center">

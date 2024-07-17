@@ -7,7 +7,6 @@ import {
   CardBody,
   CardFooter,
   Container,
-  Divider,
   Flex,
   Grid,
   GridItem,
@@ -24,7 +23,9 @@ const ServicesMP = async () => {
   return (
     <Box>
       <Container maxW="7xl" mt="30px" minH="100vh">
-      <Text fontSize="45px" fontWeight="semibold" mb="20px" align="center">Layanan Kami</Text>
+        <Text fontSize="45px" fontWeight="semibold" mb="20px" align="center">
+          Layanan Kami
+        </Text>
         <Flex justify="center" alignItems="center" h="full">
           <Grid
             templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
@@ -32,7 +33,7 @@ const ServicesMP = async () => {
           >
             {servicesMainPages?.map((servicesMainPage, index) => {
               return (
-                <GridItem key={index} w={{base: "none", md:"300px"}}>
+                <GridItem key={index} w={{ base: "none", md: "300px" }}>
                   <Card>
                     <CardBody>
                       <Image

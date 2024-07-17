@@ -37,14 +37,16 @@ const Teams = () => {
     return (
       <Container maxW="7xl" mt="50px" minH="100vh">
         <Flex justify="center" align="center" mt="50vh">
-          <Spinner speed='1s'/>
+          <Spinner speed="1s" />
         </Flex>
       </Container>
     );
   } else
     return (
       <Container maxW="7xl" mt="30px" minH="100vh">
-         <Text fontSize="45px" fontWeight="semibold" mb="20px" align="center">Tim Kami</Text>
+        <Text fontSize="45px" fontWeight="semibold" mb="20px" align="center">
+          Tim Kami
+        </Text>
         <Grid
           templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
           gap={3}

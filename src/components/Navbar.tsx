@@ -22,13 +22,13 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box bgColor="#e2e8f0" pos="sticky" zIndex="999">
-      <Container maxW={{base:"xl", md: "7xl"}}>
+      <Container maxW={{ base: "xl", md: "7xl" }}>
         <Grid py="9px">
           <Flex justify="space-between" align="center">
             <Link href="/">
               <Image src="/Logo_AlBirrIndonesia.png" maxH="45px"></Image>
             </Link>
-            <Flex display={{base:"none", md:"flex"}} gap={6}>
+            <Flex display={{ base: "none", md: "flex" }} gap={6}>
               <Link href="/">Beranda</Link>
               <Link href="/aboutUs">Tentang</Link>
               <Link href="/services">Layanan</Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
               size="lg"
               bgColor="#e2e8f0"
               icon={<GiHamburgerMenu />}
-              display={{base:"flex", md:"none"}}
+              display={{ base: "flex", md: "none" }}
               onClick={onOpen}
             />
           </Flex>

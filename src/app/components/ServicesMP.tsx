@@ -7,7 +7,6 @@ import {
   CardBody,
   CardFooter,
   Container,
-  Divider,
   Grid,
   GridItem,
   Heading,
@@ -29,7 +28,7 @@ const ServicesMP = async () => {
         >
           {servicesMainPages?.map((servicesMainPage, index) => {
             return (
-              <GridItem key={index} w={{base: "none", md:"300px"}}>
+              <GridItem key={index} w={{ base: "none", md: "300px" }}>
                 <Card>
                   <CardBody>
                     <Image

@@ -1,5 +1,12 @@
 import { getEntriesByServicesSlug } from "@/libs/contentful";
-import { Box, Container, Image, OrderedList, Text, UnorderedList } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Image,
+  OrderedList,
+  Text,
+  UnorderedList,
+} from "@chakra-ui/react";
 import {
   documentToReactComponents,
   Options,
@@ -19,19 +26,31 @@ const serviceDetail: FC<ServicesBySlug> = async ({ params }) => {
     renderNode: {
       [BLOCKS.HEADING_3]: (node, children) => {
         return (
-          <Text fontSize="35px" fontWeight="semibold"  mt="20px">
+          <Text fontSize="35px" fontWeight="semibold" mt="20px">
             {children}
           </Text>
         );
       },
       [BLOCKS.UL_LIST]: (node, children) => {
-        return <UnorderedList spacing={"8px"} fontSize="20px">{children}</UnorderedList>;
+        return (
+          <UnorderedList spacing={"8px"} fontSize="20px">
+            {children}
+          </UnorderedList>
+        );
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        return <Text mt="10px" fontSize="20px">{children}</Text>;
+        return (
+          <Text mt="10px" fontSize="20px">
+            {children}
+          </Text>
+        );
       },
       [BLOCKS.OL_LIST]: (node, children) => {
-        return <OrderedList mt="10px" fontSize="20px">{children}</OrderedList>;
+        return (
+          <OrderedList mt="10px" fontSize="20px">
+            {children}
+          </OrderedList>
+        );
       },
     },
   };
