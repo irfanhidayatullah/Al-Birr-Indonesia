@@ -22,15 +22,14 @@ const ServicesMP = async () => {
 
   return (
     <Box>
-      <Container maxW="7xl" maxH={{ md: "500px" }} mt="35px">
+      <Container maxW="7xl" mt="35px">
         <Grid
           templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
-          justifyContent="center"
           gap={3}
         >
           {servicesMainPages?.map((servicesMainPage, index) => {
             return (
-              <GridItem key={index}>
+              <GridItem key={index} w={{base: "none", md:"300px"}}>
                 <Card>
                   <CardBody>
                     <Image
@@ -46,7 +45,6 @@ const ServicesMP = async () => {
                       </Text>
                     </Stack>
                   </CardBody>
-                  <Divider />
                   <CardFooter>
                     <ButtonGroup spacing="2">
                       <Link href={servicesMainPage.waLink} target="_blank">

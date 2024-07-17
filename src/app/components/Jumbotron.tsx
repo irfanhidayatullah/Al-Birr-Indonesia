@@ -5,8 +5,8 @@ const Jumbotron = async () => {
   const welcoming = await getEntriesByWelcoming();
   return (
     <Box>
-      <Container maxW="7xl" pt={{base: "40px", md: "100px"}}>
-        <Grid maxH={{ md: "500px" }} mt="25px">
+      <Container maxW="7xl" pt={{base: "40px", md: "70px"}}>
+        <Grid maxH={{ md: "500px" }}>
           <GridItem textAlign="center" alignContent="center">
             <Image
               m="auto"

@@ -24,8 +24,7 @@ const AboutUs = () => {
               borderRadius="full"
               maxH="600px"
               mx="auto"
-              pt="25px"
-              mt="20px"
+              pt="20px"
             ></Image>
             <Text
               align="center"

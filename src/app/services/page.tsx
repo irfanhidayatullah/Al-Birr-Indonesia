@@ -23,16 +23,16 @@ const ServicesMP = async () => {
 
   return (
     <Box>
-      <Container maxW="7xl" mt={{base:"50px"}} minH='100vh'>
+      <Container maxW="7xl" mt="30px" minH="100vh">
+      <Text fontSize="45px" fontWeight="semibold" mb="20px" align="center">Layanan Kami</Text>
         <Flex justify="center" alignItems="center" h="full">
           <Grid
-            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
-            justifyContent="center"
-            gap={6}
+            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+            gap={3}
           >
             {servicesMainPages?.map((servicesMainPage, index) => {
               return (
-                <GridItem key={index}>
+                <GridItem key={index} w={{base: "none", md:"300px"}}>
                   <Card>
                     <CardBody>
                       <Image
@@ -48,7 +48,6 @@ const ServicesMP = async () => {
                         </Text>
                       </Stack>
                     </CardBody>
-                    <Divider />
                     <CardFooter>
                       <ButtonGroup spacing="2">
                         <Link href={servicesMainPage.waLink} target="_blank">
